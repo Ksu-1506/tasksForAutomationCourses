@@ -120,7 +120,7 @@ namespace NUnit_Calculator.Tests
 		}
 
 		[Test]
-		[Ignore("Waiting for Joe to fix his bugs", Until = "2020-03-01 12:00:00Z")]
+		[Ignore("Waiting for Joe to fix his bugs", Until = "2019-03-01 12:00:00Z")]
 		public void IgnoredTestUntilTime()
 		{
 			_firstNum = 5;

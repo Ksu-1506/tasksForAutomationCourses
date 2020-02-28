@@ -98,5 +98,14 @@ namespace NUnit_Calculator.Tests
 			_actualResult = ScientificCalc.ArrayMinValue(array);
 			Assert.AreEqual(_expectedResult, _actualResult, $"Actual result of calculating the minimum array ({array})  must be equal to {_expectedResult}");
 		}
+
+		[TestCase(3, 3, ExpectedResult = 27)]
+		[TestCase(12, 2, ExpectedResult = 144)]
+		[TestCase(10, 3, ExpectedResult = 1000)]
+		[TestCase(5, 4, ExpectedResult = 630)]
+		public double DivideTest(double firstNum, double secondNum)
+		{
+			return ScientificCalc.Power(firstNum, secondNum);
+		}
 	}
 }
