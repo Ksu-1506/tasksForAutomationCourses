@@ -1,0 +1,27 @@
+Austria,false
+Belgium,false
+Bulgaria,false
+Hungary,false
+Germany,false
+Greece,false
+Denmark,false
+Ireland,false
+Spain,false
+Italy,false
+Cyprus,false
+Latvia,false
+Lithuania,false
+Luxembourg,false
+Malta,false
+Netherlands,false
+Poland,false
+Slovakia,false
+Slovenia,false
+Portugal,false
+Romania,false
+Finland,false
+France,false
+Croatia,false
+Czech Republic,false
+Sweden,false
+Estonia,false 
