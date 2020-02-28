@@ -63,16 +63,16 @@ namespace NUnit_Calculator.Tests
 			Assert.AreEqual(_expectedResult, _actualResult, $"Actual result remainder of dividing the {_firstNum} by the {_secondNum} must be equal to {_expectedResult}");
 		}
 
-		[Test]
+		[Test, MaxTime(2)]
 		public void ArraySum()
 		{
-			double[] array = { 1, 2, 3, 4, 5, 6 };
-			_expectedResult = 21;
+			double[] array = { 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12 };
+			_expectedResult = 78;
 			_actualResult = ScientificCalc.ArraySum(array);
 			Assert.AreEqual(_expectedResult, _actualResult, $"Actual result sum of array ({array})  must be equal to {_expectedResult}");
 		}
 
-		[Test, Retry(4)]
+		[Test, Timeout(4)]
 		public void ArrayMaxValue()
 		{
 			double[] array = { 134, 27, 15, 456, 77, 32, -3, 44 };
@@ -90,7 +90,7 @@ namespace NUnit_Calculator.Tests
 			Assert.AreEqual(_expectedResult, _actualResult, $"Actual result of calculating the minimum array ({array})  must be equal to {_expectedResult}");
 		}
 
-		[Test]
+		[Test, Retry(10)]
 		public void FailArrayMinValue()
 		{
 			double[] array = { 2, 2, 2, 2, 2 };
