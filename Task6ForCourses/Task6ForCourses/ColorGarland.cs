@@ -26,18 +26,14 @@ namespace Task6ForCourses
 			var a = index % 4;
 			switch (a)
 			{
+				case 0:
+					return LightsColor.Green;
 				case 1:
 					return LightsColor.Red;
-
 				case 2:
 					return LightsColor.Yellow;
-
 				case 3:
 					return LightsColor.Blue;
-
-				case 4:
-					return LightsColor.Green;
-
 				default:
 					return LightsColor.Clear;
 			}
