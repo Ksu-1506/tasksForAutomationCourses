@@ -8,7 +8,7 @@ namespace Task7ForCourses
     class Program
     {
         static void Main(string[] args)
-        { 
+        {
 	        Helper helper = new Helper();
             Dictionary<int, Country> myDictionary = helper.ReadFromFile();
             Console.WriteLine("Primary list containing EU countries: ");

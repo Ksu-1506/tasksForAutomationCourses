@@ -21,9 +21,9 @@ namespace Task7ForCourses
                 do
                 {
                     Country country = new Country();
-                    var fileLines = newString.Split(',');
-                    country.CountryName = fileLines[0];
-                    country.IsTelenorSupported = Convert.ToBoolean(fileLines[1]);
+                    var newFileLines = newString.Split(',');
+                    country.CountryName = newFileLines[0];
+                    country.IsTelenorSupported = Convert.ToBoolean(newFileLines[1]);
                     _privateDictionary.Add(key++, country);
                     newString = streamReader.ReadLine();
 
