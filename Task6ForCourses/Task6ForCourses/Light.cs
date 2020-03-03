@@ -6,8 +6,7 @@
 
 		public override string ToString()
 		{
-			return $"state: { LightState.ToString()}";
+			return $"state: {LightState.ToString()}";
 		}
 	}
 }
-

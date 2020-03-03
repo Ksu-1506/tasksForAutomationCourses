@@ -15,6 +15,7 @@ namespace Task6ForCourses
 			{
 				lights.Add(new Light());
 			}
+
 			return lights;
 		}
 	}

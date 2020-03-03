@@ -12,6 +12,7 @@
 		}
 
 		public LightsColor LightsColor { get; set; }
+
 		public override string ToString()
 		{
 			return $"{base.ToString()}, color: {LightsColor.ToString()}";

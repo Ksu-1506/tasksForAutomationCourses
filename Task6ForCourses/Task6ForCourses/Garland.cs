@@ -11,6 +11,7 @@ namespace Task6ForCourses
 
 		protected Garland(int countLights)
 		{
+			// ReSharper disable once VirtualMemberCallInConstructor
 			_lights = Build(countLights);
 		}
 
@@ -24,11 +25,11 @@ namespace Task6ForCourses
 			{
 				if ((i % 2 == 0 && isEvenMinute) || (i % 2 == 1 && !isEvenMinute))
 				{
-					_lights[i].LightState = LightState.On;
+					_lights[i].LightState = LightState.Off;
 				}
 				else
 				{
-					_lights[i].LightState = LightState.Off;
+					_lights[i].LightState = LightState.On;
 				}
 			}
 		}
@@ -36,14 +37,11 @@ namespace Task6ForCourses
 		public void PrintGarlandState()
 		{
 			SetLightState();
-			int i = 0;
 			Console.WriteLine($"Current Minute: {_currentMinute}");
 			foreach (var light in _lights)
 			{
-				Console.WriteLine($"{i}: {light.ToString()}");
-				i++;
+				Console.WriteLine($"{light.ToString()}");
 			}
 		}
 	}
 }
-

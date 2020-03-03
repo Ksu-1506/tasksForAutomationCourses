@@ -11,6 +11,8 @@ namespace Task6ForCourses
 			Console.WriteLine(
 				"Enter what  type of garland you would like see (where 1 - Simple garland, 2 - Color garland, 3 - Both garlands:");
 			int garlandType = Convert.ToInt32(Console.ReadLine());
+
+
 			if (garlandType == 1)
 			{
 				Console.WriteLine($"Simple garland with {customerLightCount} lights look like this:");
@@ -34,13 +36,14 @@ namespace Task6ForCourses
 				ColorGarland colorGarland = new ColorGarland(customerLightCount);
 				colorGarland.PrintGarlandState();
 			}
+
 			else
 			{
-				Console.WriteLine("Sorry, but you were mistaken in choosing the type of garland. Try again next time =)");
+				Console.WriteLine(
+					$"Sorry, but you were mistaken in choosing the type of garland. Please, try again {Environment.NewLine}");
 			}
-			
-			Console.ReadKey();
 
+			Console.ReadKey();
 		}
 	}
 }

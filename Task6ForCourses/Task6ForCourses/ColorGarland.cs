@@ -5,9 +5,8 @@ namespace Task6ForCourses
 {
 	class ColorGarland : Garland<ColorLight>
 	{
-		public ColorGarland(int countColorLighs) : base(countColorLighs)
+		public ColorGarland(int countColorLights) : base(countColorLights)
 		{
-
 		}
 
 		public override List<ColorLight> Build(int lightsCount)
@@ -18,6 +17,7 @@ namespace Task6ForCourses
 				var light = new ColorLight(DefineColor(i + 1));
 				colorLights.Add(light);
 			}
+
 			return colorLights;
 		}
 
@@ -26,19 +26,19 @@ namespace Task6ForCourses
 			var a = index % 4;
 			switch (a)
 			{
-				case 0:
+				case 1:
 					return LightsColor.Red;
 
-				case 1: 
+				case 2:
 					return LightsColor.Yellow;
 
-				case 2: 
+				case 3:
 					return LightsColor.Blue;
 
-				case 3: 
+				case 4:
 					return LightsColor.Green;
 
-				default: 
+				default:
 					return LightsColor.Clear;
 			}
 		}
