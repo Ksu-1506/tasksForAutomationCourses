@@ -78,6 +78,20 @@ namespace NUnit_Calculator.Tests
 			double[] array = { 134, 27, 15, 456, 77, 32, -3, 44 };
 			_expectedResult = 456;
 			_actualResult = ScientificCalc.ArrayMaxValue(array);
+			Assert.That(array, !Is.Empty, "Array is not empty");
+			Assert.That(_actualResult.Equals(_expectedResult), $"Actual result of calculating the maximum array ({array})  value must be equal to {_expectedResult}");
+		}
+
+		[Test]
+		public void ArrayMaxValueWithConditions()
+		{
+			double[] array = { 134, 27, -15, 456, 77, 32, 33, 44 };
+			_expectedResult = 456;
+			_actualResult = ScientificCalc.ArrayMaxValue(array);
+
+			Assert.That(array, !Is.Empty, "Array is not empty");
+			Assert.That(array, Is.All.GreaterThan(-200).And.LessThan(500), "All elements in array are greater than -100 and less than 500");
+			Assert.That(array, Is.All.Positive, "All elements in array are positive digits");
 			Assert.That(_actualResult.Equals(_expectedResult), $"Actual result of calculating the maximum array ({array})  value must be equal to {_expectedResult}");
 		}
 
