@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Linq;
 using NUnit.Framework;
 using NUnit_Calculator.Calculators;
 using Assert = NUnit.Framework.Assert;
@@ -83,9 +84,21 @@ namespace NUnit_Calculator.Tests
 		}
 
 		[Test]
-		public void ArrayMaxValueWithConditions()
+		public void ArrayMaxValueAndUnique()
 		{
-			double[] array = { 134, 27, -15, 456, 77, 32, 33, 44 };
+			double[] array = { -111, -27, -15, 456, 77, 32, 33, 44};
+			_expectedResult = 456;
+			_actualResult = ScientificCalc.ArrayMaxValue(array);
+
+			Assert.That(array, !Is.Empty, "Array is not empty");
+			Assert.That(array, Is.All.GreaterThan(-200).And.LessThan(500), "All elements in array are greater than -100 and less than 500");
+			Assert.That(array, Is.Unique, "All elements in array are unique");
+			Assert.That(_actualResult.Equals(_expectedResult), $"Actual result of calculating the maximum array ({array})  value must be equal to {_expectedResult}");
+		}
+		[Test]
+		public void ArrayMaxValueAndAllElementsPositive()
+		{
+			double[] array = { 134, 27, -15, 456, 77, 32, 33, 44, 33 };
 			_expectedResult = 456;
 			_actualResult = ScientificCalc.ArrayMaxValue(array);
 
@@ -112,6 +125,7 @@ namespace NUnit_Calculator.Tests
 			_actualResult = ScientificCalc.ArrayMinValue(array);
 
 			Assert.That(array, !Is.Empty, "Array is not empty");
+			Assert.IsTrue(array.All(x => x >-100 && x < 500));
 			Assert.That(array, Is.All.GreaterThan(-100).And.LessThan(500), "All elements in array are greater than -100 and less than 500");
 			Assert.That(_actualResult.Equals(_expectedResult), $"Actual result of calculating the minimum array ({array})  must be equal to {_expectedResult}");
 		}
