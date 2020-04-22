@@ -6,38 +6,32 @@ namespace Task11ForCourses.WizzAir_pages
 {
 	public class TicketDetailsPage
 	{
-		//protected readonly IWebDriver Driver;
+		private IWebDriver Driver;
 		public TicketDetailsPage(IWebDriver driver)
 		{
-			//this.Driver = driver;
-			PageFactory.InitElements(driver, this);
+			this.Driver = driver;
 		}
 
 		//both airports
-		[FindsBy(How = How.XPath, Using = "//address[@data-test='flight-select-flight-title-address']")]
-		public IWebElement FlightPath;
+		public IWebElement FlightPath => Driver.FindElement(By.XPath("//address[@data-test='flight-select-flight-title-address']"));
 
 		//date of flight
-		[FindsBy(How = How.XPath, Using = "//time[@data-test='flight-select-flight-info-details-time']")]
-		public IWebElement FlightDate;
+		public IWebElement FlightDate => Driver.FindElement(By.XPath("//time[@data-test='flight-select-flight-info-details-time']"));
 
-		[FindsBy(How = How.XPath, Using = "(//div[@data-test='fare-type-button-title'])[1]")]
-		public IWebElement AllPricesButton;
+		public IWebElement AllPricesButton => Driver.FindElement(By.XPath("(//div[@data-test='fare-type-button'])[1]"));
+
+		//public IWebElement AllPricesButton => Driver.FindElement(By.XPath("(//div[@data-test='fare-type-button-title'])[1]"));
 
 		//variable of prices
-		[FindsBy(How = How.XPath, Using = "//div[@data-test='flight-select-fare']")]
-		//[FindsBy(How = How.XPath, Using = "//div[@data-test='flight-select-fare-header']")]
-		public IReadOnlyList<IWebElement> PricesCategory;
+		public IReadOnlyList<IWebElement> PricesCategory => Driver.FindElements(By.XPath("//div[@data-test='flight-select-fare']"));
+		//public IReadOnlyList<IWebElement> PricesCategory => Driver.FindElements(By.XPath("//div[@data-test='flight-select-fare-header']"));
 
 		//3 prices
-		[FindsBy(How = How.XPath, Using = "//div[@data-test='fare-type-button' and contains(@class, 'active')]//span")]
-		public IReadOnlyList<IWebElement> AllPrices;
+		public IReadOnlyList<IWebElement> AllPrices => Driver.FindElements(By.XPath("//div[@data-test='fare-type-button' and contains(@class, 'active')]//span"));
 
 		//select min price
-		[FindsBy(How = How.XPath, Using = "(//div[@class='fare-button__background'])[3]")]
-		public IWebElement SelectBaseTarif;
+		public IWebElement SelectBaseTarif => Driver.FindElement(By.XPath("(//div[@data-test='fare-type-button'])[5]"));
 
-		[FindsBy(How = How.Id, Using = "flight-select-continue-button")]
-		public IWebElement FlightSelectButton;
+		public IWebElement FlightSelectButton => Driver.FindElement(By.Id("flight-select-continue-button"));
 	}
 }
